@@ -1,0 +1,37 @@
+<div class="container my-5">
+
+    <h3 class="text-light"> Create New Address </h3>
+
+    <div class="card mt-5 p-5">
+
+        <div class="row">
+
+            <div class="col-lg-6 text-center">
+                <img src="assets/address.gif" class="w-100" alt="">
+            </div>
+
+
+            <div class="col-lg-6 p-2">
+
+                <form [formGroup]="contactForm" (ngSubmit)="create()" >
+
+                    <input  formControlName="name" type="text" placeholder="name" [ngClass]="{ 'form-control m-2': true, 'error': contactForm.controls['name'].touched && contactForm.controls['name'].invalid    }"  >
+                    <input formControlName="lastname" type="text" placeholder="lastname"  [ngClass]="{ 'form-control m-2': true, 'error': contactForm.controls['lastname'].touched && contactForm.controls['lastname'].invalid    }"  >
+                    <input formControlName="email" type="email" placeholder="email" [ngClass]="{ 'form-control m-2': true, 'error': contactForm.controls['email'].touched && contactForm.controls['email'].invalid    }">
+                    <input formControlName="tel" type="text" placeholder="tel" [ngClass]="{ 'form-control m-2': true, 'error': contactForm.controls['tel'].touched && contactForm.controls['tel'].invalid    }" >
+                    <input formControlName="address" type="text" placeholder="address" [ngClass]="{ 'form-control m-2': true, 'error': contactForm.controls['address'].touched && contactForm.controls['address'].invalid    }">
+                    <input formControlName="image" (change)="select($event)" type="file" [ngClass]="{ 'form-control m-2': true, 'error': contactForm.controls['image'].touched && contactForm.controls['image'].invalid    }" >
+
+                    <button [disabled]="contactForm.invalid" type="submit" class="btn btn-outline-dark m-2 form-control"> Create </button>
+                
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
